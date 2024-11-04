@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import React from "react";
 import Navbar from "./Navbar";
-
+import { IoMenu } from "react-icons/io5";
 const Header = () => {
   return (
     <Stack
@@ -14,7 +14,7 @@ const Header = () => {
       zIndex={100}
       py={1}
     >
-      <h1>Threads App</h1>
+      <h1>Threads</h1>
       <Stack
  
         justifyContent={"center"}
@@ -26,8 +26,7 @@ const Header = () => {
         <Navbar />
       </Stack>
 
-      <p>Menu</p>
-    </Stack>
+      <IoMenu size={32} />    </Stack>
   );
 };
 
