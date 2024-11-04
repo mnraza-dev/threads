@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import React from "react";
 
 const Error = () => {
@@ -21,6 +21,21 @@ const Error = () => {
         <Typography variant="h2">
           Page Not Found
         </Typography>
+
+        <Button
+          variant="contained"
+         
+          size="large"
+          href="/" 
+          sx={{
+            marginTop: "20px",
+            bgcolor: "black",
+            color: "white",
+            borderRadius: "10px",
+          }}
+        >
+          Back to Home
+        </Button>
     </Stack>
   );
 };

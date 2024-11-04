@@ -5,11 +5,13 @@ import Header from "./components/common/Header";
 import Home from "./pages/protected/Home";
 import Search from "./pages/protected/Search";
 import Error from "./pages/Error";
+import Register from "./pages/Register";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
+      <Register />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/likes" element={<Home />} />
