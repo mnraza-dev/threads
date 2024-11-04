@@ -4,10 +4,24 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "node index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "threads",
+    "app",
+    "instagram",
+    "react",
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "MN Raza",
   "license": "ISC",
-  "description": ""
+  "description": "A thread app clone where users can post, comment and like posts",
+  "dependencies": {
+    "express": "^4.21.1",
+    "mongoose": "^8.8.0",
+    "nodemon": "^3.1.7"
+  }
 }
