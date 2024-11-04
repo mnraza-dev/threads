@@ -26,7 +26,7 @@ const Header = () => {
         <Navbar />
       </Stack>
 
-      <IoMenu size={32} />    </Stack>
+      <IoMenu  className="image-icon" size={36} />    </Stack>
   );
 };
 
