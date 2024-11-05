@@ -1,12 +1,14 @@
 import express from "express";
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
+import router from "./routes/routes.js";
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 5000;  
+const PORT = process.env.PORT || 5000;
 
 connectDB();
+app.use("", router);
 
 app.get("/", (req, res) => {
   res.send("Hi There");
