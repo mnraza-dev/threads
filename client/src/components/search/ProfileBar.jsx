@@ -7,11 +7,13 @@ const ProfileBar = () => {
       <Stack
         flexDirection={"row"}
         justifyContent={"space-between"}
-        px={1}
+        alignItems={"center"}
+        px={4}
         py={2}
-    
+        gap={2}
         mx={"auto"}
-        boxShadow={"5px 5px 5px gray"}
+        boxShadow={"3px 2px 5px gray"}
+        width={"100%"}
         borderRadius={"15px"}
         sx={{
           ":hover": {
@@ -19,7 +21,7 @@ const ProfileBar = () => {
           },
         }}
       >
-        <Stack flexDirection={"row"} gap={2}>
+        <Stack flexDirection={"row"} alignItems={"center"} gap={2}>
           <Avatar src="" alt="" />
           <Stack flexDirection={"column"} gap={0.6}>
             <Typography variant="h6" fontSize={"1rem"} fontWeight={"bold"}>
@@ -42,7 +44,9 @@ const ProfileBar = () => {
             p: 2,
             height: 40,
           }}
-        >Follow</Button>
+        >
+          Follow
+        </Button>
       </Stack>
     </>
   );

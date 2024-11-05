@@ -6,7 +6,6 @@ import PostTwo from "./post/PostTwo";
 const Post = () => {
   return (
     <Stack
-    
       flexDirection={"row"}
       justifyContent={"space-between"}
       alignItems={"center"}

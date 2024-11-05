@@ -32,7 +32,7 @@ const Navbar = () => {
         {" "}
         <CiHeart size={32} />
       </Link>
-      <Link to="/userProfile">
+      <Link to="/profile">
         {" "}
         <RxAvatar size={32} />
       </Link>

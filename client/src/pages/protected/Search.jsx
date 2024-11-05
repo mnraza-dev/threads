@@ -10,7 +10,7 @@ const Search = () => {
       <SearchInput />
       <Stack
         flexDirection={"column"}
-        gap={1}
+        gap={1.5}
         mb={5}
         width={"100%"}
         p={2}
