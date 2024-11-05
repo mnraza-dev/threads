@@ -1,7 +1,7 @@
 import { Button, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 
-const Register = () => {
+const Login = () => {
   return (
     <Stack
       flexDirection={"row"}
@@ -20,14 +20,9 @@ const Register = () => {
           fontWeight={"bold"}
           alignSelf={"center"}
         >
-          Register with Email
+          Login with Email
         </Typography>
-        <TextField
-          id="outlined-basic"
-          variant="outlined"
-          size="small"
-          placeholder="Enter your username"
-        />
+      
         <TextField
           id="outlined-basic"
           variant="outlined"
@@ -38,7 +33,6 @@ const Register = () => {
           id="outlined-basic"
           variant="outlined"
           size="small"
-          type="password"
           placeholder="Enter your Password"
         />
         <Button
@@ -51,27 +45,26 @@ const Register = () => {
             color: "white",
             fontSize: "1rem",
             ":hover": {
-              bgcolor: "#414141",
-              color: "white",
-              cursor: "pointer",
-            },
+                bgcolor: "#414141",
+                color: "white",
+                cursor: "pointer",
+            }
+            ,
           }}
         >
-          Sign Up
+          Login
         </Button>
         <Typography
-          variant="subtitle2"
-          fontSize={"1.3rem"}
+          variant="h5"
+          fontSize={"1.5rem"}
           fontWeight={"bold"}
           alignSelf={"center"}
-         
         >
-          Already have an account? 
-          <span  className="login-link">Login</span>
+          Login with Email
         </Typography>
       </Stack>
     </Stack>
   );
 };
 
-export default Register;
+export default Login;

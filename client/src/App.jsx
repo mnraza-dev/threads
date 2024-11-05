@@ -12,6 +12,7 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Register />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/likes" element={<Home />} />
