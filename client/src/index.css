@@ -20,3 +20,7 @@ body {
   margin-left: 6px;
   cursor: pointer;
 }
+
+.img-round{
+  border-radius: 12px;
+}

@@ -9,6 +9,8 @@ const Home = () => {
       <Input />
       <Stack gap={2} mb={10} flexDirection={"column"}>
         <Post />
+        <Post />
+        <Post />
       </Stack>
     </>
   );

@@ -28,6 +28,7 @@ const Input = () => {
         sx={{
           color: "aliceblue",
           bgcolor: "gray",
+          borderRadius:'8px',
           ":hover": {
             bgcolor: "black",
             cursor: "pointer",

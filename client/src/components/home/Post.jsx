@@ -1,9 +1,12 @@
 import React from "react";
-import { Avatar, Stack, Typography } from "@mui/material";
-
+import { Stack, Typography } from "@mui/material";
+import { IoIosMore } from "react-icons/io";
+import PostOne from "./post/PostOne";
+import PostTwo from "./post/PostTwo";
 const Post = () => {
   return (
     <Stack
+    
       flexDirection={"row"}
       justifyContent={"space-between"}
       alignItems={"center"}
@@ -18,23 +21,29 @@ const Post = () => {
         transition: "all ease-in-out 0.3s",
       }}
     >
-      <Stack flexDirection={"row"} gap={2} alignItems={"center"}>
-        <Avatar
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="AJ"
-        />
-      </Stack>
-      <Stack
+      <Stack flexDirection={"row"} gap={2}>
+        <PostOne />
+        <PostTwo />
+        <Stack
         flexDirection={"row"}
-        justifyContent={"center"}
+        justifyContent={"end"}
         gap={1}
         fontSize={"1rem"}
-        alignItems={"center"}
+       
       >
-        <Typography variant="caption" color="GrayText">
-          Posted a new post
+        <Typography
+          position={"relative"}
+          top={2}
+          fontSize={"1rem"}
+          variant="caption"
+          color="GrayText"
+        >
+          24h
         </Typography>
+        <IoIosMore size={32} />
       </Stack>
+      </Stack>
+   
     </Stack>
   );
 };

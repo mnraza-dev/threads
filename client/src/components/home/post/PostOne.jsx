@@ -18,7 +18,7 @@ const PostOne = () => {
         badgeContent={
           <Avatar
             src=""
-            alt="AJ"
+            alt="MN"
             sx={{
               width: 20,
               height: 20,
