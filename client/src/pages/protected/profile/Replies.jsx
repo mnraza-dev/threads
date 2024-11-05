@@ -10,7 +10,6 @@ const Replies = () => {
         <Comments />
         <Comments />
         <Comments />
-        <Comments />
       </Stack>
     </>
   );

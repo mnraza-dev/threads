@@ -5,22 +5,23 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "node index.js"
+    "dev": "nodemon index.js "
   },
   "keywords": [
     "threads",
-    "app",
-    "instagram",
-    "react",
-    "node",
-    "express",
-    "mongodb"
+    "app"
   ],
   "author": "MN Raza",
   "license": "ISC",
   "description": "A thread app clone where users can post, comment and like posts",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
+    "formidable": "^2.1.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.0",
     "nodemon": "^3.1.7"
   }
