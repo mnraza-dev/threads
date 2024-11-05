@@ -1,9 +1,8 @@
-import  express  from 'express';
+import express from "express";
 const router = express.Router();
-
-router.get('/', (req, res) => {
-    res.send('Hello Raza');
-});
+import { signin } from "../controller/user-controller";
 
 
-export default router
+router.get("/signin", signin);
+
+export default router;
