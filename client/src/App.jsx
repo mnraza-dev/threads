@@ -6,21 +6,23 @@ import Home from "./pages/protected/Home";
 import Search from "./pages/protected/Search";
 import Error from "./pages/Error";
 import Register from "./pages/Register";
+import { Box } from "@mui/material";
+import ProtectedLayout from './pages/protected/ProtectedLayout';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Header />
-      <Register />
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/likes" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/userProfile" element={<UserProfile />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-    </BrowserRouter>
+    <Box minHeight={"100vh"}>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<ProtectedLayout/>}>
+            <Route exact path="" element={<h1>Home</h1>} />
+            <Route exact path="post/:id" element={<h1>Single Post</h1>} />
+            <Route exact path="search" element={<h1>Search</h1>} />
+          
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Box>
   );
 };
 
