@@ -11,6 +11,7 @@ import Threads from "./pages/protected/profile/Threads";
 import Replies from "./pages/protected/profile/Replies";
 import Repost from "./pages/protected/profile/Repost";
 import SinglePost from "./pages/protected/SinglePost";
+import Register from "./pages/Register";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Route exact path="" element={<Home />} />
             <Route exact path="post/:id" element={<SinglePost/>} />
             <Route exact path="search" element={<Search />} />
+            <Route exact path="register" element={<Register />} />
             <Route exact path="profile" element={<ProfileLayout />}>
               <Route exact path="threads/:id" element={<Threads />} />
               <Route exact path="replies/:id" element={<Replies />} />
