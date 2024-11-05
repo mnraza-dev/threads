@@ -1,3 +1,3 @@
 
- # threads-clone
-## Used Technologies : MERN
+# threads-clone
+### Used Technologies : MERN
