@@ -102,3 +102,36 @@ export const login = async (req, res) => {
     res.status(400).json({ msg: "Error in Login", error: error.message });
   }
 };
+
+export const logout = async (req, res) => {};
+
+export const userDetails = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).json({ msg: "Please provide user id" });
+    }
+
+    const userExists = await User.findById(id)
+      .select("-password")
+      .populate("followers")
+      .populate("following")
+
+      .populate({
+        path: "threads",
+        populate: [{ path: "likes" }, { path: "comments" }, { path: "admin" }],
+      })
+      .populate({
+        path: "replies",
+        popuplate: { path: "admin" },
+      });
+
+    if (!userExists) {
+      return res.status(400).json({ msg: "User not found" });
+    }
+  } catch (error) {
+    res
+      .status(400)
+      .json({ msg: "Error in getting User Details", error: error.message });
+  }
+};
