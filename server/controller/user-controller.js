@@ -112,7 +112,7 @@ export const userDetails = async (req, res) => {
       return res.status(400).json({ msg: "Please provide user id" });
     }
 
-    const userExists = await User.findById(id)
+    const user = await User.findById(id)
       .select("-password")
       .populate("followers")
       .populate("following")
@@ -124,14 +124,54 @@ export const userDetails = async (req, res) => {
       .populate({
         path: "replies",
         popuplate: { path: "admin" },
+      })
+      .populate({
+        path: "reposts",
+        popuplate: [{ path: "likes" }, { path: "comments" }, { path: "admin" }],
       });
 
-    if (!userExists) {
-      return res.status(400).json({ msg: "User not found" });
-    }
+    res.status(200).json({ msg: "User Details Fetched", user });
   } catch (error) {
     res
       .status(400)
       .json({ msg: "Error in getting User Details", error: error.message });
+  }
+};
+
+export const followUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).json({ msg: "Please provide user id" });
+    }
+
+    const userExists = await User.findById(id);
+
+    if (!userExists) {
+      return res.status(400).json({ msg: "User not found" });
+    }
+
+    if (userExists.followers.includes(req.user._id)) {
+      await User.findByIdAndUpdate(
+        userExists._id,
+        {
+          $pull: { followers: req.user._id },
+        },
+        { new: true }
+      );
+      return res.status(201).json({ msg: `${userExists.username} unfollowed` });
+    }
+    await User.findByIdAndUpdate(
+      userExists._id,
+      {
+        $push: { followers: req.user._id },
+      },
+      { new: true }
+    );
+    return res.status(201).json({ msg: `${userExists.username} Followed` });
+  } catch (error) {
+    res
+      .status(400)
+      .json({ msg: "Error in following user", error: error.message });
   }
 };
