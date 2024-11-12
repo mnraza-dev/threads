@@ -1,3 +1,3 @@
 
 # threads-clone
-### Used Technologies : MERN
+### Used Technologies :  ReactJS , ExpressJS , MongoDB
